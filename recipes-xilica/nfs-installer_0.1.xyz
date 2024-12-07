@@ -1,0 +1,27 @@
+DESCRIPTION = "Prepare automated installer from NFS rootfs."
+
+SUMMARY = "\
+This recipe automates the manual build-time steps outlined at Variscite's wiki for installing an image over NFS mount: \
+https://variwiki.com/index.php?title=Yocto_Flash_From_Net&release=mx8mp-yocto-scarthgap-6.6.23_2.0.0-v1.0 \
+Specifically, placing the recovery images and scripts from a pre-built, downloadable archive onto the \
+NFS-exported rootfs in the location expected by the generated yocto_install.sh script. \
+"
+
+# wget the recovery image archive from RECOVERY_SDCARD_IMAGE_URL
+do_fetch() {
+    
+}
+
+# extract the recovery image archive
+do_unpack() {
+    
+}
+
+# Mimic the user following these instructions:
+#   - Insert the recovery SD card into your host PC and 
+#   - copy the following files from it (assuming it is mounted at /media):
+do_install() {
+    # sudo cp -a /media/rootfs/opt/images ~/flash_rootfs/opt/
+    # sudo cp /media/rootfs/usr/bin/*.sh  ~/flash_rootfs/usr/bin/
+}
+
