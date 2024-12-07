@@ -24,6 +24,5 @@ IMAGE_INSTALL:append = "\
     os-release \
     lsb-release \
     "
-
-#nfs-installer \
-#packagegroup-meta-oe-multimedia \
+#nfs-installer
+#packagegroup-meta-oe-multimedia
