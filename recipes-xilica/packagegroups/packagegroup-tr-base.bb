@@ -32,7 +32,7 @@ PACKAGES = "\
 #   - poky/meta/recipes-extended/packagegroups/packagegroup-core-full-cmdline.bb
 #
 RDEPENDS:packagegroup-tr-base = "\
-    vim \
+    vim-tiny \
     tmux \
     "
 RRECOMMENDS:packagegroup-tr-base = "\
