@@ -38,8 +38,8 @@ index 1c3c389a3d6c..b58021b07790 100644
 -
 -		home {
 -			label = "Home";
-+ 		Swpb {
-+ 			label = "Swpb";
++		Swpb {
++			label = "Swpb";
  			linux,code = <KEY_HOME>;
 -			gpios = <&pca9534 2 GPIO_ACTIVE_LOW>;
 -			wakeup-source;
@@ -49,15 +49,15 @@ index 1c3c389a3d6c..b58021b07790 100644
 -			label = "Menu";
 -			linux,code = <KEY_MENU>;
 -			gpios = <&pca9534 3 GPIO_ACTIVE_LOW>;
-+ 			gpios = <&gpio5 23 GPIO_ACTIVE_LOW>;
++			gpios = <&gpio5 23 GPIO_ACTIVE_LOW>;
  			wakeup-source;
  		};
  	};
  
  	gpio-leds {
  		compatible = "gpio-leds";
-+ 		pinctrl-0 = <&pinctrl_gpio_led>;
-+ 		pinctrl-names = "default";
++		pinctrl-0 = <&pinctrl_gpio_led>;
++		pinctrl-names = "default";
  		status = "okay";
  
 -		heartbeat {
@@ -325,8 +325,8 @@ index 1c3c389a3d6c..b58021b07790 100644
 -			output-low;
 -			line-name = "usb3_sel";
 -		};
- 	};
- 
+	};
+
 -	ov5640_mipi0: ov5640_mipi@3c {
 -		compatible = "ovti,ov5640";
 -		reg = <0x3c>;
@@ -582,7 +582,7 @@ index 1c3c389a3d6c..b58021b07790 100644
 -&ecspi2 {
 +&sai2 {
 +	#sound-dai-cells = <0>;
- 	pinctrl-names = "default";
+	pinctrl-names = "default";
 -	pinctrl-0 = <&pinctrl_ecspi2>;
 -	cs-gpios = <&gpio5 13 GPIO_ACTIVE_LOW>;
 +	pinctrl-0 = <&pinctrl_sai2>;
@@ -617,7 +617,7 @@ index 1c3c389a3d6c..b58021b07790 100644
 +	pinctrl-0 = <&pinctrl_gpio_ac>;
 +	acrst_gpio_hog {
 +		//gpio = <&gpio5 28 GPIO_ACTIVE_HIGH>;
- 		gpio-hog;
+		gpio-hog;
 -		gpios = <6 0>;
 -		output-low;
 -		line-name = "cam_buf";
