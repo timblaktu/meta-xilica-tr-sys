@@ -1,6 +1,7 @@
 KERNEL_SRC = "https://x-token-auth@bitbucket.org/xilica/linux-imx"
 SRCBRANCH = "xilica-tr-scarthgap"
-SRCREV = "${AUTOREV}"
+SRCREV = "b88ff377a55b7f0d84f27447677592fb66de6173"
+# "${AUTOREV}"
 
 # Local file settings are no longer needed since we are using our
 # own fork to manage changes instead of patches.
