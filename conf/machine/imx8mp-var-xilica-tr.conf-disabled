@@ -1,0 +1,35 @@
+# DISABLED CURRENTLY - we're using standard MACHINE for now (imx8mp-var-dart) and will just 
+# bbappend recipes-kernel/bsp to create, install, and load the correct dtb in u-boot.
+
+# MACHINE layer for Xilica Testarossa Carrier Boards, based on Variscite VAR-SOM-IMX8MP Symphony
+#   - https://github.com/varigit/meta-variscite-bsp-imx/blob/scarthgap_6.6.23-2.0.0_var01/conf/machine/imx8mp-var-dart.conf
+
+#
+# Include configuration for imx8mp-var-dart, the MACHINE we are "deriving from":
+#   - MACHINE Configuration File
+#   - MACHINE-specific bitbake OVERRIDES
+#     - https://docs.yoctoproject.org/5.0.5/ref-manual/variables.html#term-OVERRIDES
+#     - https://docs.yoctoproject.org/5.0.5/ref-manual/variables.html#term-MACHINEOVERRIDES
+#   - =. means prepend without spaces
+#     - https://docs.yoctoproject.org/bitbake/2.8/bitbake-user-manual/bitbake-user-manual-metadata.html#appending-and-prepending-without-spaces
+#
+MACHINEOVERRIDES =. "imx8mp-var-dart:"
+require conf/machine/imx8mp-var-dart.conf
+
+#
+# Add device trees for major variants of this board.
+#   TODO: overwrite KERNEL_DEVICETREE with only the dtbs we need.
+#
+KERNEL_DEVICETREE:append = "\
+    freescale/imx8mp-var-xilica-tr.dtb \
+"
+
+# Set U-Boot DTB
+UBOOT_DTB_NAME  = "imx8mp-var-xilica-tr.dtb"
+# UBOOT_DTB_EXTRA = "imx8mp-var-dart-1.x-dt8mcustomboard.dtb imx8mp-var-som-symphony.dtb"
+
+
+# Customize U-Boot Configuration for this machine
+#   - https://docs.yoctoproject.org/5.0.5/ref-manual/variables.html#term-UBOOT_CONFIG
+#
+# UBOOT_CONFIG[]
