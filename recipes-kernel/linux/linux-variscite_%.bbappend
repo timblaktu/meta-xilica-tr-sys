@@ -7,5 +7,5 @@
 
 KERNEL_SRC = "git://x-token-auth@bitbucket.org/xilica/linux-imx;protocol=https"
 SRCBRANCH = "xilica-tr-scarthgap"
-SRCREV = "30b42820cd05ede7cce425386e676598d5c43235"
+SRCREV = "3780c36bb2f2cc7f2b2b28f5ce2827ad1132d4d9"
 LINUX_VERSION_EXTENSION:append = "xilica+git${SRCPV}"
