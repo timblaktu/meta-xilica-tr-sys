@@ -13,6 +13,8 @@ require recipes-extended/images/core-image-full-cmdline.bb
 inherit image-buildinfo
 IMAGE_BUILDINFO_VARS:append = " XILICA_TR_BUILDSTAMP"
 
+inherit core-image
+
 # Image Features
 #   https://docs.yoctoproject.org/5.0.5/ref-manual/features.html#image-features
 IMAGE_FEATURES += " \
