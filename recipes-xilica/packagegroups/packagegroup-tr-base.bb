@@ -25,15 +25,26 @@ PACKAGES = "\
     "
 
 #
-# packagegroup-tr-base contains everything that xilica-tr-base image needs on top 
-# of core-image-full-cmdline's packagegroups.
-#
-#   - poky/meta/recipes-extended/images/core-image-full-cmdline.bb
-#   - poky/meta/recipes-extended/packagegroups/packagegroup-core-full-cmdline.bb
+# This packagegroup contains everything that xilica-tr-base image needs on top 
+# of the other packagegroups included in IMAGE_INSTALL/CORE_IMAGE_EXTRA_INSTALL.
 #
 RDEPENDS:packagegroup-tr-base = "\
     vim-tiny \
     tmux \
+    docker-moby \
+    python3-docker-compose \
+    alsa-utils \
+    curl \
+    dosfstools \
+    fio \
+    i2c-tools \
+    imx-kobs \
+    os-release \
+    lsb-release \
+    ldd \
+    memtester \
+    mtd-utils \
+    mtd-utils-ubifs \
     "
 RRECOMMENDS:packagegroup-tr-base = "\
     "
