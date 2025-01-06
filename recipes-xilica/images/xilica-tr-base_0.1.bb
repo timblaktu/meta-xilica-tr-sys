@@ -22,7 +22,6 @@ IMAGE_FEATURES += " \
     hwcodecs \
     debug-tweaks \
     nfs-client \
-    perf \
     serial-autologin-root \
     tools-debug \
     tools-testapps \
