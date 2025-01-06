@@ -1,8 +1,6 @@
 DESCRIPTION = "Compound SWUpdate image (.swu) using xilica-tr-swupdate"
-SUMMARY = "This recipe creates a .swu archive containing xilica-tr-swupdate and friends.
-  - https://variwiki.com/index.php?title=SWUpdate_Guide&release=mx8mp-yocto-scarthgap-6.6.23_2.0.0-v1.1
-  - example recipe camem from meta-variscite-sdk-imx/dynamic-layers/swupdate/var-image-swu.bb
-"
+SUMMARY = "This recipe creates a swu archive containing xilica-tr-swupdate and friends"
+LICENSE = "MIT"
 SECTION = ""
 
 # Note: sw-description is mandatory
@@ -10,7 +8,6 @@ SRC_URI = " \
 	file://sw-description \
 	file://update.sh \
 "
-# TODO: choose and specify LICENSE
 
 inherit swupdate
 
