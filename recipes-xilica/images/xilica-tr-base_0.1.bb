@@ -1,20 +1,14 @@
 DESCRIPTION = "Base image for Xilica Testarossa Product line"
+SUMMARY = "Xilica Testarossa base builds on top of a headless 'full-cmdline' base image with docker CE support.
+  - provided by meta-variscite-sdk-imx layer"
 
-SUMMARY = "\
-Modeled after core-image-full-cmdline, using only what is needed. \
-  - poky/meta/recipes-extended/images/core-image-full-cmdline.bb \
-  - poky/meta/recipes-extended/packagegroups/packagegroup-core-full-cmdline.bb \
-"
-
-# from poky
-require recipes-extended/images/core-image-full-cmdline.bb
-# from meta-openembedded/meta-oe
-#require recipes-core/packagegroups/packagegroup-meta-oe.bb
+require dynamic-layers/virtualization/recipes-extended/images/var-image-docker-minimal.bb
 
 # Add custom field to /etc/buildinfo
-# https://docs.yoctoproject.org/5.0.5/ref-manual/classes.html#image-buildinfo
+#   - https://docs.yoctoproject.org/5.0.5/ref-manual/classes.html#image-buildinfo
+#   - XILICA_TR_BUILDSTAMP was passed to BB env via BB_ENV_PASSTHROUGH_ADDITIONS
+#
 inherit image-buildinfo
-# passed into BB env via BB_ENV_PASSTHROUGH_ADDITIONS
 IMAGE_BUILDINFO_VARS:append = " XILICA_TR_BUILDSTAMP"
 
 #IMAGE_FEATURES:append = ""
@@ -23,6 +17,4 @@ IMAGE_INSTALL:append = "\
     packagegroup-tr-base \
     os-release \
     lsb-release \
-    "
-#nfs-installer
-#packagegroup-meta-oe-multimedia
+"
