@@ -2,7 +2,7 @@ DESCRIPTION = "SWUpdate-able base image for Xilica Testarossa Product line"
 SUMMARY = "This image adds swupdate, provided by meta-variscite-sdk-imx, on top of the xilica-tr-base."
 LICENSE = "MIT"
 
-require "recipes-xilica/images/xilica-tr-base.bb"
+require "${LAYERDIR}/recipes-xilica/images/xilica-tr-base_0.1.bb"
 
 CORE_IMAGE_EXTRA_INSTALL += " \
 	swupdate \

@@ -2,6 +2,8 @@ DESCRIPTION = "Base image for Xilica Testarossa Product line"
 SUMMARY = "Xilica Testarossa base image."
 LICENSE = "MIT"
 
+require recipes-extended/images/core-image-full-cmdline.bb
+
 inherit core-image features_check image-buildinfo
 
 REQUIRED_DISTRO_FEATURES += " alsa nfs systemd usbgadget usbhost virtualization zeroconf"
@@ -29,7 +31,5 @@ CORE_IMAGE_EXTRA_INSTALL += " \
 "
 
 IMAGE_INSTALL:append = "\
-    packagegroup-basic \
-    packagegroup-core-full-cmdline \
     packagegroup-tr-base \
 "
