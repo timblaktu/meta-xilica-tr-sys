@@ -1,7 +1,13 @@
+# Derived from Variscite's example
+#   - https://github.com/varigit/meta-variscite-sdk-imx/blob/scarthgap_6.6.23-2.0.0_var01/dynamic-layers/swupdate/var-image-swu.bb
+# Also see swupdate docs:
+#   - https://sbabic.github.io/swupdate/building-with-yocto.html#template-for-recipe-using-the-class
+
 DESCRIPTION = "Compound SWUpdate image (.swu) using xilica-tr-swupdate"
+SECTION = ""
 SUMMARY = "This recipe creates a swu archive containing xilica-tr-swupdate and friends"
 LICENSE = "MIT"
-SECTION = ""
+LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
 
 # Note: sw-description is mandatory
 SRC_URI = " \
