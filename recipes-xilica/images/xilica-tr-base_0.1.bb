@@ -15,7 +15,6 @@ IMAGE_BUILDINFO_VARS:append = " XILICA_TR_BUILDSTAMP"
 # Image Features
 #   https://docs.yoctoproject.org/5.0.5/ref-manual/features.html#image-features
 IMAGE_FEATURES += " \
-    ssh-server-openssh \
     hwcodecs \
     debug-tweaks \
     nfs-client \
@@ -26,10 +25,6 @@ IMAGE_FEATURES += " \
 
 CORE_IMAGE_EXTRA_INSTALL += " \
 	packagegroup-imx-tools-audio \
-	packagegroup-fsl-tools-testapps \
-	packagegroup-fsl-tools-benchmark \
-	packagegroup-fsl-gstreamer1.0 \
-	packagegroup-fsl-gstreamer1.0-full \
 	${@bb.utils.contains('DISTRO_FEATURES', 'systemd', 'systemd-analyze', '', d)} \
 "
 
