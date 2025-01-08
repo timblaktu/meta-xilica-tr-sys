@@ -8,7 +8,9 @@ HOMEPAGE = "https://bitbucket.org/xilica/linux-imx"
 #   - SRCREV = "${AUTOREV}" is broken, due to an unresolved git ls-remote/auth issue:
 #     - see https://github.com/openembedded/bitbake/pull/16#issuecomment-2557304521
 
-KERNEL_SRC = "git://x-token-auth@bitbucket.org/xilica/linux-imx;protocol=https"
+# Public Fork for variscite support reproducing issues
+KERNEL_SRC = "git://github.com/timblaktu/linux-imx;protocol=https"
+#KERNEL_SRC = "git://x-token-auth@bitbucket.org/xilica/linux-imx;protocol=https"
 
 SRCBRANCH = "xilica-tr-scarthgap"
 SRC_URI = "${KERNEL_SRC};branch=${SRCBRANCH}"
